@@ -3,6 +3,7 @@
 in  vec4 vPosition;
 in  vec4 vColor;
 out vec4 color;
+uniform mat4 mvp;
 
 uniform vec3 theta;
 
@@ -38,5 +39,7 @@ void main()
     rz[2][2] = 1.0;
     
     color = vColor;
-    gl_Position = rz * ry * rx * vPosition;
+    //gl_Position = rz * ry * rx * vPosition;
+    gl_Position = mvp*vec4(vPosition);
+
 } 

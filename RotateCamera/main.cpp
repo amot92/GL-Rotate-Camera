@@ -21,6 +21,11 @@ GLuint program;
 const int NumVertices = 36;
 glm::vec4 points[NumVertices];
 glm::vec4 colors[NumVertices];
+glm::mat4 model;
+float fov = 45.0f;
+float ncp = 0.1f;
+float fcp = 100.0f;
+float ar = 1.0f;
 //----------------------------------------------------------------------------
 
 glm::vec4 vertices[8] = {
@@ -114,7 +119,7 @@ void init(void)
 void mymouse(GLFWwindow* window, int button, int action, int mods)
 {
     if (action == GLFW_PRESS) {
-        
+        //model = glm::rotate(model, 10 , glm::vec3(1.0f, 0.0f, 0.0f));
     }
 }
 
@@ -124,6 +129,43 @@ void mykey(GLFWwindow* window, int key, int scancode, int action, int mods)
         if (key == GLFW_KEY_ESCAPE || key == GLFW_KEY_Q) {
             glfwSetWindowShouldClose(window, GL_TRUE);
         }
+//        if (key == GLFW_KEY_E) {
+//            ar += .01;
+//        }
+//        if (key == GLFW_KEY_D) {
+//            ar -= -01;
+//        }
+        
+//        if (key == GLFW_KEY_MINUS) {
+//            fov -= 5;
+//        }
+//        if (key == GLFW_KEY_EQUAL) {
+//            fov += 5;
+//        }
+//        if (key == GLFW_KEY_DOWN) {
+//            ncp -= .05;
+//        }
+//        if (key == GLFW_KEY_UP) {
+//            ncp += .05;
+//        }
+//        if (key == GLFW_KEY_S) {
+//            fcp -= 10;
+//        }
+//        if (key == GLFW_KEY_W) {
+//            ncp += 10;
+//        }
+        
+        
+//        if (key == GLFW_KEY_X){
+//            model = glm::translate(model, glm::vec3(-5.0f, 0.0f, 0.0f));
+//        }
+//        if (key == GLFW_KEY_Y){
+//            model = glm::translate(model, glm::vec3(0.0f, -5.0f, 0.0f));
+//        }
+//        if (key == GLFW_KEY_Z){
+//            model = glm::translate(model, glm::vec3(0.0f, 0.0f, -5.0f));
+//
+//        }
     }
 }
 //----------------------------------------------------------------------------
@@ -139,18 +181,11 @@ int main(int argc, char **argv)
         return 1;
     }
     
-    /* We must specify 3.2 core if on Apple OS X -- other O/S can specify
-     anything here. I defined 'APPLE' in the makefile for OS X
-     
-     Remove the #ifdef #endif and play around with this - you should be starting
-     an explicit version anyway, and some non-Apple drivers will require this too.
-     */
-//#ifdef APPLE
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-//#endif
+
     window = glfwCreateWindow(640, 640, "simple", NULL, NULL);
     
     if (!window) {
@@ -172,17 +207,16 @@ int main(int argc, char **argv)
     glfwSetMouseButtonCallback(window, mymouse);
     //
     
-    
     do{
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);     // clear the window
         
-        glm::mat4 model = glm::mat4(1.0);
+        model = glm::mat4(1.0);
         glm::vec3 eye(0.0f, 0.0f, 2.0f);
         glm::vec3 at(0.0f, 0.0f, 0.0f);
         glm::vec3 up(0.0, 1.0f, 0.0f);
         glm::mat4 view = glm::lookAt(eye, at, up);
         
-        glm::mat4 Projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.f);
+        glm::mat4 Projection = glm::perspective(glm::radians(fov), ar, ncp, fcp);
         glm::mat4 mvp = Projection * view * model;
         
         glUniformMatrix4fv(mvpi, 1, GL_FALSE, glm::value_ptr(mvp));
