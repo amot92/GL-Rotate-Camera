@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC6047602057505E005D2567 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC60475F2057505E005D2567 /* main.cpp */; };
+		AC60476820575072005D2567 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC60476720575072005D2567 /* OpenGL.framework */; };
+		AC60476A20575078005D2567 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC60476920575078005D2567 /* GLUT.framework */; };
+		AC60476C20575084005D2567 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AC60476B20575084005D2567 /* libGLEW.2.1.0.dylib */; };
+		AC60476E20575091005D2567 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AC60476D20575091005D2567 /* libglfw.3.2.dylib */; };
+		ACA1C447205DDA3000CBB3F5 /* fshader36.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC6047992058402B005D2567 /* fshader36.glsl */; };
+		ACA1C448205DDA3500CBB3F5 /* vshader36.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC60479A2058402B005D2567 /* vshader36.glsl */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AC60475A2057505E005D2567 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				ACA1C448205DDA3500CBB3F5 /* vshader36.glsl in CopyFiles */,
+				ACA1C447205DDA3000CBB3F5 /* fshader36.glsl in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AC60475C2057505E005D2567 /* RotateCamera */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RotateCamera; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC60475F2057505E005D2567 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AC60476720575072005D2567 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		AC60476920575078005D2567 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		AC60476B20575084005D2567 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../../../../../../opt/local/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		AC60476D20575091005D2567 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../../../../../opt/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		AC6047732057635A005D2567 /* InitShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitShader.h; sourceTree = "<group>"; };
+		AC6047992058402B005D2567 /* fshader36.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fshader36.glsl; sourceTree = "<group>"; };
+		AC60479A2058402B005D2567 /* vshader36.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vshader36.glsl; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC6047592057505E005D2567 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC60476E20575091005D2567 /* libglfw.3.2.dylib in Frameworks */,
+				AC60476C20575084005D2567 /* libGLEW.2.1.0.dylib in Frameworks */,
+				AC60476A20575078005D2567 /* GLUT.framework in Frameworks */,
+				AC60476820575072005D2567 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC6047532057505E005D2567 = {
+			isa = PBXGroup;
+			children = (
+				AC60475E2057505E005D2567 /* RotateCamera */,
+				AC60475D2057505E005D2567 /* Products */,
+				AC60476620575072005D2567 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AC60475D2057505E005D2567 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC60475C2057505E005D2567 /* RotateCamera */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC60475E2057505E005D2567 /* RotateCamera */ = {
+			isa = PBXGroup;
+			children = (
+				AC6047992058402B005D2567 /* fshader36.glsl */,
+				AC60479A2058402B005D2567 /* vshader36.glsl */,
+				AC60475F2057505E005D2567 /* main.cpp */,
+				AC6047732057635A005D2567 /* InitShader.h */,
+			);
+			path = RotateCamera;
+			sourceTree = "<group>";
+		};
+		AC60476620575072005D2567 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC60476D20575091005D2567 /* libglfw.3.2.dylib */,
+				AC60476B20575084005D2567 /* libGLEW.2.1.0.dylib */,
+				AC60476920575078005D2567 /* GLUT.framework */,
+				AC60476720575072005D2567 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC60475B2057505E005D2567 /* RotateCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC6047632057505E005D2567 /* Build configuration list for PBXNativeTarget "RotateCamera" */;
+			buildPhases = (
+				AC6047582057505E005D2567 /* Sources */,
+				AC6047592057505E005D2567 /* Frameworks */,
+				AC60475A2057505E005D2567 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RotateCamera;
+			productName = RotateCube;
+			productReference = AC60475C2057505E005D2567 /* RotateCamera */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC6047542057505E005D2567 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Adam Oakes";
+				TargetAttributes = {
+					AC60475B2057505E005D2567 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AC6047572057505E005D2567 /* Build configuration list for PBXProject "RotateCamera" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AC6047532057505E005D2567;
+			productRefGroup = AC60475D2057505E005D2567 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC60475B2057505E005D2567 /* RotateCamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC6047582057505E005D2567 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC6047602057505E005D2567 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AC6047612057505E005D2567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AC6047622057505E005D2567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AC6047642057505E005D2567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"BUNDLE_LOADER[arch=*]" = "";
+				CODE_SIGN_STYLE = Automatic;
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AC6047652057505E005D2567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC6047572057505E005D2567 /* Build configuration list for PBXProject "RotateCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC6047612057505E005D2567 /* Debug */,
+				AC6047622057505E005D2567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC6047632057505E005D2567 /* Build configuration list for PBXNativeTarget "RotateCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC6047642057505E005D2567 /* Debug */,
+				AC6047652057505E005D2567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC6047542057505E005D2567 /* Project object */;
+}
