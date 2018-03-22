@@ -8,11 +8,11 @@
 #include <GLFW/glfw3.h>
 #include "Angel.h"
 #include "InitShader.h"
-#include <glm/glm/glm.hpp>
-#include <glm/glm/vec4.hpp>
-#include <glm/glm/gtc/matrix_transform.hpp>
-#include <glm/glm/gtc/type_ptr.hpp>
-#include <glm/glm/gtx/normal.hpp>
+#include <glm/glm.hpp>
+#include <glm/vec4.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/normal.hpp>
 
 
 GLuint vao;
