@@ -26,6 +26,9 @@ float fov = 45.0f;//field of view
 float ncp = 0.1f;//near clipping-plane
 float fcp = 100.0f;//far clipping-plane
 float ar = 1.0f;//aspect ratio
+bool isPressed = false;
+double oldX, oldY;
+float hrotate, vrotate;
 //----------------------------------------------------------------------------
 
 glm::vec4 vertices[8] = {
@@ -118,10 +121,29 @@ void init(void)
 
 void mymouse(GLFWwindow* window, int button, int action, int mods)
 {
-    if (action == GLFW_PRESS) {
-        //model = glm::rotate(model, 10 , glm::vec3(1.0f, 0.0f, 0.0f));
+    if (button == GLFW_MOUSE_BUTTON_LEFT)          {
+        if (GLFW_PRESS == action) {
+            isPressed = true;
+            glfwGetCursorPos(window, &oldX, &oldY);
+        }
+        else if (GLFW_RELEASE == action) {
+            isPressed = false;
+            hrotate = 0;
+            vrotate = 0;
+        }
     }
 }
+
+static void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos)
+{
+    if (isPressed) {
+        hrotate += 0.01*(xpos - oldX);
+        vrotate += 0.01*(ypos - oldY);
+        model = glm::rotate(model, GLfloat(hrotate), glm::vec3(0.0, 1.0, 0.0));
+        model = glm::rotate(model, GLfloat(vrotate), glm::vec3(1.0, 0.0, 0.0));
+    }
+}
+
 
 void mykey(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
@@ -200,11 +222,14 @@ int main(int argc, char **argv)
     
     glfwSetKeyCallback(window, mykey);
     glfwSetMouseButtonCallback(window, mymouse);
+    glfwSetCursorPosCallback(window, cursor_pos_callback);
+    
     //
     
     do{
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);     // clear the window
         
+
         glm::vec3 eye(0.0f, 0.0f, 2.0f);
         glm::vec3 at(0.0f, 0.0f, 0.0f);
         glm::vec3 up(0.0, 1.0f, 0.0f);
