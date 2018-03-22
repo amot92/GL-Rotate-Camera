@@ -150,38 +150,48 @@ void mykey(GLFWwindow* window, int key, int scancode, int action, int mods)
     if (action == GLFW_PRESS) {
         if (key == GLFW_KEY_ESCAPE || key == GLFW_KEY_Q) glfwSetWindowShouldClose(window, GL_TRUE);
 
-        if (key == GLFW_KEY_1){
-            model = glm::rotate(model, 10.0f, glm::vec3(1.0f, 0.0f, 0.0f));
-        }
-        if (key == GLFW_KEY_2){
-            model = glm::rotate(model, 10.0f, glm::vec3(-1.0f, 0.0f, 0.0f));
-        }
-        if (key == GLFW_KEY_3){
-            model = glm::rotate(model, 10.0f, glm::vec3(0.0f, 1.0f, 0.0f));
-        }
-        if (key == GLFW_KEY_4){
-            model = glm::rotate(model, 10.0f, glm::vec3(0.0f, -1.0f, 0.0f));
-        }
-        if (key == GLFW_KEY_5){
-            model = glm::rotate(model, 10.0f, glm::vec3(0.0f, 0.0f, 1.0f));
-        }
-        if (key == GLFW_KEY_6){
-            model = glm::rotate(model, 10.0f, glm::vec3(0.0f, 0.0f, -1.0f));
-        }
+        if (key == GLFW_KEY_1) model = glm::rotate(model, 10.0f, glm::vec3(1.0f, 0.0f, 0.0f));
+        
+        if (key == GLFW_KEY_2) model = glm::rotate(model, 10.0f, glm::vec3(-1.0f, 0.0f, 0.0f));
+        
+        if (key == GLFW_KEY_3) model = glm::rotate(model, 10.0f, glm::vec3(0.0f, 1.0f, 0.0f));
+        
+        if (key == GLFW_KEY_4) model = glm::rotate(model, 10.0f, glm::vec3(0.0f, -1.0f, 0.0f));
+    
+        if (key == GLFW_KEY_5) model = glm::rotate(model, 10.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+        
+        if (key == GLFW_KEY_6) model = glm::rotate(model, 10.0f, glm::vec3(0.0f, 0.0f, -1.0f));
+        
         
         if (key == GLFW_KEY_S) model = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f));
 
-        if (key == GLFW_KEY_LEFT) model = glm::translate(model, glm::vec3(-5.0f, 0.0f, 0.0f));
+        if (key == GLFW_KEY_LEFT) model = glm::translate(model, glm::vec3(-1.0f, 0.0f, 0.0f));
         
-        if (key == GLFW_KEY_RIGHT) model = glm::translate(model, glm::vec3(5.0f, 0.0f, 0.0f));
+        if (key == GLFW_KEY_RIGHT) model = glm::translate(model, glm::vec3(1.0f, 0.0f, 0.0f));
         
-        if (key == GLFW_KEY_UP) model = glm::translate(model, glm::vec3(0.0f, 5.0f, 0.0f));
+        if (key == GLFW_KEY_UP) model = glm::translate(model, glm::vec3(0.0f, 1.0f, 0.0f));
       
-        if (key == GLFW_KEY_DOWN) model = glm::translate(model, glm::vec3(0.0f, -5.0f, 0.0f));
+        if (key == GLFW_KEY_DOWN) model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f));
         
-        if (key == GLFW_KEY_Z) model = glm::translate(model, glm::vec3(0.0f, 0.0f, 5.0f));
+        if (key == GLFW_KEY_Z) model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.0f));
     
-        if (key == GLFW_KEY_X) model = glm::translate(model, glm::vec3(0.0f, 0.0f, -5.0f));
+        if (key == GLFW_KEY_X) model = glm::translate(model, glm::vec3(0.0f, 0.0f, -1.0f));
+        
+        if (key == GLFW_KEY_EQUAL) fov -= 5;
+        
+        if (key == GLFW_KEY_MINUS) fov += 5;
+        
+        if (key == GLFW_KEY_P) ar += .2;
+        
+        if (key == GLFW_KEY_O) ar -= .2;
+        
+        if (key == GLFW_KEY_I) ncp += .05;
+        
+        if (key == GLFW_KEY_U) ncp -= .05;
+        
+        if (key == GLFW_KEY_Y) fcp += 10;
+        
+        if (key == GLFW_KEY_T) fcp -= 10;
         
     }
 }
