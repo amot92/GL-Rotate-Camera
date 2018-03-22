@@ -21,11 +21,11 @@ GLuint program;
 const int NumVertices = 36;
 glm::vec4 points[NumVertices];
 glm::vec4 colors[NumVertices];
-glm::mat4 model;
-float fov = 45.0f;
-float ncp = 0.1f;
-float fcp = 100.0f;
-float ar = 1.0f;
+glm::mat4 model = glm::mat4(1.0);
+float fov = 45.0f;//field of view
+float ncp = 0.1f;//near clipping-plane
+float fcp = 100.0f;//far clipping-plane
+float ar = 1.0f;//aspect ratio
 //----------------------------------------------------------------------------
 
 glm::vec4 vertices[8] = {
@@ -126,46 +126,26 @@ void mymouse(GLFWwindow* window, int button, int action, int mods)
 void mykey(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
     if (action == GLFW_PRESS) {
-        if (key == GLFW_KEY_ESCAPE || key == GLFW_KEY_Q) {
-            glfwSetWindowShouldClose(window, GL_TRUE);
+        if (key == GLFW_KEY_ESCAPE || key == GLFW_KEY_Q) glfwSetWindowShouldClose(window, GL_TRUE);
+
+        if (key == GLFW_KEY_R){
+//            model = glm::rotate(model, 10 , glm::vec3(1.0f, 0.0f, 0.0f));
         }
-//        if (key == GLFW_KEY_E) {
-//            ar += .01;
-//        }
-//        if (key == GLFW_KEY_D) {
-//            ar -= -01;
-//        }
         
-//        if (key == GLFW_KEY_MINUS) {
-//            fov -= 5;
-//        }
-//        if (key == GLFW_KEY_EQUAL) {
-//            fov += 5;
-//        }
-//        if (key == GLFW_KEY_DOWN) {
-//            ncp -= .05;
-//        }
-//        if (key == GLFW_KEY_UP) {
-//            ncp += .05;
-//        }
-//        if (key == GLFW_KEY_S) {
-//            fcp -= 10;
-//        }
-//        if (key == GLFW_KEY_W) {
-//            ncp += 10;
-//        }
+        if (key == GLFW_KEY_S) model = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f));
+
+        if (key == GLFW_KEY_LEFT) model = glm::translate(model, glm::vec3(-5.0f, 0.0f, 0.0f));
         
+        if (key == GLFW_KEY_RIGHT) model = glm::translate(model, glm::vec3(5.0f, 0.0f, 0.0f));
         
-//        if (key == GLFW_KEY_X){
-//            model = glm::translate(model, glm::vec3(-5.0f, 0.0f, 0.0f));
-//        }
-//        if (key == GLFW_KEY_Y){
-//            model = glm::translate(model, glm::vec3(0.0f, -5.0f, 0.0f));
-//        }
-//        if (key == GLFW_KEY_Z){
-//            model = glm::translate(model, glm::vec3(0.0f, 0.0f, -5.0f));
-//
-//        }
+        if (key == GLFW_KEY_UP) model = glm::translate(model, glm::vec3(0.0f, 5.0f, 0.0f));
+      
+        if (key == GLFW_KEY_DOWN) model = glm::translate(model, glm::vec3(0.0f, -5.0f, 0.0f));
+        
+        if (key == GLFW_KEY_Z) model = glm::translate(model, glm::vec3(0.0f, 0.0f, 5.0f));
+    
+        if (key == GLFW_KEY_X) model = glm::translate(model, glm::vec3(0.0f, 0.0f, -5.0f));
+        
     }
 }
 //----------------------------------------------------------------------------
@@ -210,7 +190,7 @@ int main(int argc, char **argv)
     do{
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);     // clear the window
         
-        model = glm::mat4(1.0);
+//        model = glm::mat4(1.0);
         glm::vec3 eye(0.0f, 0.0f, 2.0f);
         glm::vec3 at(0.0f, 0.0f, 0.0f);
         glm::vec3 up(0.0, 1.0f, 0.0f);
